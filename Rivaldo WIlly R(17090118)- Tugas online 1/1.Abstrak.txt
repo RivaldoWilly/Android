@@ -1,0 +1,20 @@
+1. abstrak
+abstract class Personal(nama: String) {
+    init {
+        println("Nama Saya Adalah $nama.")
+    }
+    fun tampilkanNim(nim: Int){
+        println("SSN saya adalah $nim")
+    }
+    abstract fun tampilkan(keterangan: String)
+}
+class Siswa(nama: String): Personal(nama){
+    override fun tampilkan(keterangan: String){
+        println(keterangan)
+    }
+}
+fun main(args: Array<String>){
+    val jek = Siswa("Rivaldo WIlly R")
+    jek.tampilkan("Saya Seorang Mahasiswa")
+    jek.tampilkanNim(17090118)
+}

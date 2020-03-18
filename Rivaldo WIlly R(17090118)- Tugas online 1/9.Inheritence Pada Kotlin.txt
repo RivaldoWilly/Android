@@ -1,0 +1,64 @@
+#Inheritence : 
+open class Personal(umur : Int, nama: String){
+    init {
+        println("Nama Saya adalah $nama")
+        println("Umur Saya adalah $umur")
+    }
+}
+class GuruMatematika(umur: Int, nama: String): Personal(umur,nama){
+    fun mengajar(){
+        println("Saya Mengajar di kelas 6A")
+    }
+}
+class Pesepakbola(umur: Int, nama: String): Personal(umur,nama){
+    fun bermain(){
+        println("Saya Bermain Untuk Manchester United")
+    }
+}
+fun main(args: Array<String>){
+    val t1=GuruMatematika(25,"Rani")
+    t1.mengajar()
+    println()
+    val f1= Pesepakbola(22,"James")
+    f1.bermain()
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#Inheretence 3 Parameter :
+
+open class Personal(umur : Int, nama: String){
+
+}
+class Pesepakbola(umur: Int, nama: String, klub: String): Personal(umur,nama){
+    init{
+        println("Nama $nama Umur $umur dan bermain untuk $klub")
+    }
+    fun bermain(){
+        println("Saya Sedang Bermain Bola")
+    }
+}
+
+fun main(args: Array<String>){
+    val f1=Pesepakbola(22, "James", "Manchester United")
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#tanpa konstraktor primary :
+fun main(args: Array<String>){
+    val p1= Authlog("Password Buruk")
+}
+open class Log{
+    var data : String =""
+    var nomorData = 0
+    constructor(_data: String){
+    }
+    constructor(_data: String, _nomorData: Int){
+        data=_data
+        nomorData=_nomorData
+        println("$data: $nomorData kali")
+    }
+}
+class Authlog: Log{
+    constructor(_data: String): this ("dari authlog -> + $_data",10){
+    }
+    constructor(_data: String, _nomorData: Int): super(_data, _nomorData){
+    }
+}

@@ -1,0 +1,31 @@
+# COntoh Class dan object:
+//Ini adalah Class
+class Mobil {
+    //data member
+    private var isOn: Boolean = false
+    //fungsi member
+    fun turnOn(){
+        isOn = true
+    }
+    //fungsi member
+    fun turnOff(){
+        isOn = false
+    }
+ fun displaymobil(mobil:String){
+        if (isOn == true)
+        	println("$mobil mobil is on")
+        else
+        	println("$mobil mobil is off")
+    }
+}
+
+//ini adalah Objek
+fun main(args: Array<String>){
+    val m1= Mobil()//membuat objek m1 dari class mobil
+    val m2= Mobil()//membuat objek m2 dari class mobil
+    //untuk mengakses member
+    m1.turnOn()
+    m2.turnOff()
+    m1.displaymobil("m1")
+    m2.displaymobil("m2")
+}

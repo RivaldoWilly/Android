@@ -1,0 +1,35 @@
+Deklarasi objek : 
+
+object Test{
+    private var a: Int= 0
+    var b: Int = 1
+    
+    fun halo(): Int{
+        a = 12
+        return a
+    }
+}
+fun main(args: Array<String>){
+    val hasil : Int
+    
+    hasil = Test.halo()
+    
+    println("b = ${Test.b}")
+    println("Hasil = $hasil")
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ekspresi objek : 
+
+open class person(){
+    fun makan ()=println("Makan Mi Ayam")
+    fun ngomong ()=println("Bareng Bareng")
+    open fun doa ()=println("lamak bana")
+}
+fun main(args: Array<String>){
+	val muslim = object: person(){
+        override fun doa()= println("jangan lupa baca doa")
+    }
+    muslim.makan()
+    muslim.ngomong()
+    muslim.doa()
+}

@@ -1,0 +1,56 @@
+#constructor Primary :
+
+fun main(args: Array<String>){
+    val person1= person("Aldo", 21)
+    println("Nama Depan = ${person1.namaDepan}")
+    println("Usia= ${person1.usia}")
+}
+class person(val namaDepan: String, var usia:Int){
+    
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#constuctor Primary dan inisialisasi block :
+
+fun main(args: Array<String>){
+    val person1= person("Aldo", 21)
+    
+}
+class person(val nama: String, var usiaperson:Int){
+    val namaDepan: String
+    var umur: Int
+    
+    //Inisialisasi block
+    init{
+        namaDepan= nama.capitalize()
+        umur = usiaperson
+    	
+         println("Nama Depan = $namaDepan")
+   		 println("Usia= $umur")
+    }
+    
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#Constructor Secondary :
+
+fun main(args: Array<String>){
+    val p1= Authlog("Password Buruk")
+}
+open class Log{
+    var data : String =""
+    var nomorData = 0
+    constructor(_data: String){
+    }
+    constructor(_data: String, _nomorData: Int){
+        data=_data
+        nomorData=_nomorData
+        println("$data: $nomorData kali")
+    }
+}
+class Authlog: Log{
+    constructor(_data: String): this ("dari authlog -> + $_data",10){
+    }
+    constructor(_data: String, _nomorData: Int): super(_data, _nomorData){
+    }
+}
+

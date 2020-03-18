@@ -1,0 +1,8 @@
+class Person{
+    companion object{
+        fun callMe()= println("Saya dipanggil")
+    }
+}
+fun main(args: Array<String>){
+    Person.callMe()
+}

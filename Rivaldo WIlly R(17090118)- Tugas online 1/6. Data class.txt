@@ -1,0 +1,68 @@
+Data Class :
+
+data class User(val nama: String, val umur : Int)
+
+fun main(args: Array<String>){
+    val aldo = User("Aldo", 21)
+    println("Nama = ${aldo.nama}")
+    println("Umur = ${aldo.umur}")
+}
+
+Coppying :
+
+data class User(val nama: String, val umur : Int)
+
+fun main(args: Array<String>){
+    val u1 = User("Aldo", 21)
+    
+    //penggunaan function copy
+    val u2 = u1.copy(nama= "willy")
+    
+    println("Nama = ${u1.nama}, Umur = ${u1.umur}")
+    println("Nama = ${u2.nama}, Umur = ${u2.umur}")
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Metode ke string :
+data class User(val nama: String, val umur : Int)
+
+fun main(args: Array<String>){
+    val u1 = User("Aldo", 21)
+    println(u1.toString())
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+hashcode dan equals :
+data class User(val nama: String, val umur : Int)
+
+fun main(args: Array<String>){
+    val u1 = User("Aldo", 21)
+    val u2 = u1.copy()
+    val u3 = u1.copy(nama= "Willy")
+    
+    println("u1 hashcode = ${u1.hashCode()}")
+    println("u2 hashcode = ${u2.hashCode()}")
+    println("u2 hashcode = ${u3.hashCode()}")
+    
+    if (u1.equals(u2)==true)
+    println("u1 sama dengan u2")
+    else
+    println("u1 tidak sama dengan u2")
+    
+    if (u1.equals(u3)==true)
+    println("u1 sama dengan u3")
+    else
+    println("u1 tidak sama dengan u3")
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+deklarasi destruksi :
+
+data class User(val nama: String, val umur : Int, val jk: String)
+
+fun main(args: Array<String>){
+    val u1 = User("Aldo", 21, "Laki")
+   
+    val (nama,umur,jk)= u1
+    println("Nama = $nama")
+    println("Umur = $umur")
+    println("Kelamin = $jk")
+   
